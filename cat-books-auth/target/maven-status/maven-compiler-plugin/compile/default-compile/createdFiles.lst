@@ -1,0 +1,4 @@
+com\adorablecat\catbooks\auth\demos\web\BasicController.class
+com\adorablecat\catbooks\auth\demos\web\PathVariableController.class
+com\adorablecat\catbooks\auth\CatBooksAuthApplication.class
+com\adorablecat\catbooks\auth\demos\web\User.class
