@@ -1,5 +1,6 @@
 package com.adorablecat.framework.biz.operationlog.aspect;
 
+import com.adorablecat.exception.BizException;
 import com.adorablecat.util.JsonUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -40,10 +41,22 @@ public class ApiOperationLogAspect {
         //获取注解描述信息
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         ApiOperationLog annotation = signature.getMethod().getAnnotation(ApiOperationLog.class);
-        if (annotation != null) {
-            log.info();
-        }
+//        if (annotation == null) {
+//            log.info("日志切面没有使用@ApiOperationLog注解！");
+//            throw new BizException("<UNK>@ApiOperationLog<UNK>");
+//        }
         String description = annotation.description();
-        return joinPoint.proceed();
+
+        //打印相关参数
+        log.info("请求开始：{}，入参{}，请求类{}，请求方法：{}",
+                description, collect, simpleName, methodName);
+//执行请求方法
+        Object proceedResult = joinPoint.proceed();
+        //执行时间
+        long costTime = System.currentTimeMillis() - startTime;
+
+        //出参
+        log.info("请求结束{},耗时{}，出参：{}", description, costTime, JsonUtils.toJsonString(proceedResult));
+        return proceedResult;
     }
 }
