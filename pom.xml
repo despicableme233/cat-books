@@ -12,6 +12,7 @@
 
     <modules>
         <module>cat-books-auth</module>
+        <module>cat-books-framework</module>
     </modules>
 
     <properties>
@@ -20,6 +21,8 @@
         <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        <!--maven相关版本号-->
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 
         <!--    依赖包版本管理-->
         <lombok.version>1.18.30</lombok.version>
@@ -63,6 +66,12 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.adorablecat</groupId>
+                <artifactId>cat-books-common</artifactId>
+                <version>${revision}</version>
             </dependency>
 
         </dependencies>

@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.adorablecat</groupId>
+        <artifactId>cat-books</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>cat-books-framework</artifactId>
+    <!--    多模块项目打包方式为pom-->
+    <packaging>pom</packaging>
+    <name>${project.artifactId}</name>
+    <description>平台基础设施</description>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <modules>
+
+        <module>cat-books-common</module>
+    </modules>
+
+    <dependencies>
+
+    </dependencies>
+</project>
