@@ -3,27 +3,31 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.adorablecat</groupId>
-        <artifactId>cat-books</artifactId>
+        <artifactId>cat-books-framework</artifactId>
         <version>${revision}</version>
     </parent>
 
-    <artifactId>cat-books-framework</artifactId>
-    <!--    多模块项目打包方式为pom-->
-    <packaging>pom</packaging>
+    <groupId>com.adorablecat.framework.biz.operationlog</groupId>
+    <artifactId>catBooks-spring-boot-starter-biz-operationlog</artifactId>
+    <packaging>jar</packaging>
+
     <name>${project.artifactId}</name>
-    <description>平台基础设施</description>
 
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <modules>
-        <module>cat-books-common</module>
-        <module>catBooks-spring-boot-starter-biz-operationlog</module>
-    </modules>
-
     <dependencies>
+        <dependency>
+            <groupId>com.adorablecat</groupId>
+            <artifactId>cat-books-common</artifactId>
+        </dependency>
 
+        <!-- AOP 切面 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
     </dependencies>
 </project>

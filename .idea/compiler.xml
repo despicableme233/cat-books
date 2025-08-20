@@ -15,9 +15,13 @@
         <processorPath useClasspath="false">
           <entry name="$PROJECT_DIR$/../../download/mavenRepository/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
         </processorPath>
-        <module name="cat-books-common" />
+        <module name="catBooks-spring-boot-starter-biz-operationlog" />
         <module name="cat-books-auth" />
+        <module name="cat-books-common" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="catBooks-spring-boot-starter-viz-operationlog" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
